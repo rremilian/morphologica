@@ -33,7 +33,7 @@ jobs:
       working-directory: vcpkg_repo
 
     - name: Install dependencies using vcpkg
-      run: ./vcpkg install --triplet=${{ inputs.VCPKG_TRIPLET }} --x-manifest-root=${{ github.workspace }}/vcpkg
+      run: ./vcpkg install --triplet=${{ inputs.VCPKG_TRIPLET }} --x-manifest-root=${{ github.workspace }}/vcpkg --vcpkg-root=${{ github.workspace }}/vcpkg_repo
       working-directory: vcpkg_repo
 
     - name: Configure CMake
