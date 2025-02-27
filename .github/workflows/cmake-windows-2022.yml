@@ -8,6 +8,10 @@ on:
   pull_request:
     branches: [ "main" ]
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   call-workflow-passing-data:
     uses: rremilian/morphologica/.github/workflows/cmake-windows-template.yml@feat/add_windows_workflows
